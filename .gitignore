@@ -1,0 +1,25 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+# .idea/*
+# !.idea/scopes
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+.idea/runConfigurations/Fabric_Client___fabric__fabric.xml
+.idea/runConfigurations/Fabric_Server___fabric__fabric.xml
