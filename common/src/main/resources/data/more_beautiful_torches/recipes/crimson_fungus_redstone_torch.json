@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:crimson_fungus"}, "#": [{"item": "minecraft:redstone"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:crimson_fungus_redstone_torch"}, "show_notification": true }

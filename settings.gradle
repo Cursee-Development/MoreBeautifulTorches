@@ -24,3 +24,5 @@ rootProject.name = 'MoreBeautifulTorches'
 include("common")
 include("fabric")
 include("forge")
+include 'operations'
+

@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "examplemod",
+    "id": "more_beautiful_torches",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -16,7 +16,10 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "net.jason13.examplemod.FabricExampleMod"
+            "com.lupin.more_beautiful_torches.FabricExampleMod"
+        ],
+        "client": [
+            "com.lupin.more_beautiful_torches.FabricExampleModClient"
         ]
     },
     "mixins": [

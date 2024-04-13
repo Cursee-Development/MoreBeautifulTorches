@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:deepslate_diamond_ore"}, "#": [{"item": "minecraft:soul_soil"}, {"item":"minecraft:soul_sand"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:deepslate_diamond_ore_soul_torch"}, "show_notification": true }
