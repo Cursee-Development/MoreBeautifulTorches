@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:stripped_oak_log"}, "#": [{"item": "minecraft:soul_soil"}, {"item":"minecraft:soul_sand"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:stripped_oak_log_soul_torch"}, "show_notification": true }

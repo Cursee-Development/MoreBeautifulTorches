@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:quartz_pillar"}, "#": [{"item": "minecraft:soul_soil"}, {"item":"minecraft:soul_sand"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:quartz_pillar_soul_torch"}, "show_notification": true }

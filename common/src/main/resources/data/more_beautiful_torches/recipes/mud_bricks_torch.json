@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:mud_bricks"}, "#": [{"item": "minecraft:coal"}, {"item":"minecraft:charcoal"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:mud_bricks_torch"}, "show_notification": true }

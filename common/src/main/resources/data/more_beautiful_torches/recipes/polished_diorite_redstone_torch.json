@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:polished_diorite"}, "#": [{"item": "minecraft:redstone"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:polished_diorite_redstone_torch"}, "show_notification": true }
