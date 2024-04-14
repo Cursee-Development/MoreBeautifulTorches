@@ -12,9 +12,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.PushReaction;
-
-import static net.minecraft.world.level.block.Blocks.*;
 
 public class ModBlocks {
 	
@@ -22,11 +19,10 @@ public class ModBlocks {
 		return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(CommonConstants.MOD_ID, name), item);
 	}
 	
-	
-	private static Item registerBlockItem(String name, Block block) {
-		return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(CommonConstants.MOD_ID, name),
-			new BlockItem(block, new Item.Properties().rarity(Rarity.RARE)));
-	}
+	// private static Item registerBlockItem(String name, Block block) {
+	// 	return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(CommonConstants.MOD_ID, name),
+	// 		new BlockItem(block, new Item.Properties().rarity(Rarity.RARE)));
+	// }
 	
 	private static Block registerBlock(String name, Block block) {
 		// registerBlockItem(name, block);
