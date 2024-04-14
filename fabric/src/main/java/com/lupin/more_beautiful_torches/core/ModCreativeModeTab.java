@@ -20,7 +20,7 @@ public class ModCreativeModeTab {
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(ModCreativeModeTab::addFoods);
 	}
 	public static final CreativeModeTab GOLDENFOODS_TAB = FabricItemGroup.builder()
-		.title(Component.translatable("creativemodetab.gf_tab"))
+		.title(Component.translatable("itemGroup.moreBeautifulTorches"))
 		.icon(() -> new ItemStack(ModBlocks.ACACIA_LOG_TORCH_ITEM))
 		.displayItems((params, output) -> addFoods(output))
 		.build();

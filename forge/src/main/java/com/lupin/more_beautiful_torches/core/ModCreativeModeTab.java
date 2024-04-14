@@ -14,7 +14,7 @@ public class ModCreativeModeTab {
 	
 	public static RegistryObject<CreativeModeTab> MOREBEAUTIFULTORCHES_TAB = CREATIVE_MODE_TABS.register("morebeautifultorches_tab", () ->
 		CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ACACIA_LOG_TORCH_ITEM.get()))
-			.title(Component.translatable("itemGroup.morebeautifultorches")).build());
+			.title(Component.translatable("itemGroup.moreBeautifulTorches")).build());
 	
 	public static void register(IEventBus eventBus) {
 		CREATIVE_MODE_TABS.register(eventBus);
