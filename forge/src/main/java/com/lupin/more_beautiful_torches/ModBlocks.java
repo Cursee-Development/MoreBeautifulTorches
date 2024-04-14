@@ -1,4 +1,4 @@
-package com.lupin.more_beautiful_torches.core;
+package com.lupin.more_beautiful_torches;
 
 import com.lupin.more_beautiful_torches.CommonConstants;
 import net.minecraft.core.Direction;
@@ -7,7 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,14 +14,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.world.level.block.Blocks.*;
-
 public class ModBlocks {
+	
+	
+	
 	public static final DeferredRegister<Item> MOD_ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, CommonConstants.MOD_ID);
 	public static final DeferredRegister<Block> MOD_BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, CommonConstants.MOD_ID);
 	
-	// public static final Block REDSTONE_TORCH = register("redstone_torch", new RedstoneTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY).pushReaction(PushReaction.DESTROY)));
-	// public static final Block REDSTONE_WALL_TORCH = register("redstone_wall_torch", new RedstoneWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY).dropsLike(REDSTONE_TORCH).pushReaction(PushReaction.DESTROY)));
+	// public static final Block REDSTONE_TORCH = registerDeferred("redstone_torch", new RedstoneTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY).pushReaction(PushReaction.DESTROY)));
+	// public static final Block REDSTONE_WALL_TORCH = registerDeferred("redstone_wall_torch", new RedstoneWallTorchBlock(BlockBehaviour.Properties.of().noCollission().instabreak().lightLevel(litBlockEmission(7)).sound(SoundType.WOOD).pushReaction(PushReaction.DESTROY).dropsLike(REDSTONE_TORCH).pushReaction(PushReaction.DESTROY)));
 	
 	public static final RegistryObject<Block> ACACIA_LOG_REDSTONE_TORCH = registerBlock("acacia_log_redstone_torch", () -> new RedstoneTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_TORCH)) );
 	public static final RegistryObject<Block> ACACIA_LOG_REDSTONE_WALL_TORCH = registerBlock("acacia_log_redstone_wall_torch", () -> new RedstoneWallTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_WALL_TORCH)) );
@@ -2183,7 +2183,7 @@ public class ModBlocks {
 	}
 	
 	/** Registers both Blocks and BlockItems for our Torches*/
-	public static void register(IEventBus bus) {
+	public static void registerDeferred(IEventBus bus) {
 		MOD_BLOCK_REGISTRY.register(bus);
 		MOD_ITEM_REGISTRY.register(bus);
 	}

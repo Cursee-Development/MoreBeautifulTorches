@@ -1,9 +1,5 @@
 package com.lupin.more_beautiful_torches;
 
-import com.lupin.more_beautiful_torches.CommonClass;
-import com.lupin.more_beautiful_torches.CommonConstants;
-import com.lupin.more_beautiful_torches.core.ModBlocks;
-import com.lupin.more_beautiful_torches.core.ModCreativeModeTab;
 import net.jason13.monolib.methods.BlockMethods;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,7 +23,9 @@ public class ForgeExampleMod {
         
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         
-        ModBlocks.register(bus);
+        // ModBlocks.registerDeferred(bus);
+        ModBlocks.MOD_BLOCK_REGISTRY.register(bus);
+        ModBlocks.MOD_ITEM_REGISTRY.register(bus);
         ModCreativeModeTab.register(bus);
         
         MinecraftForge.EVENT_BUS.register(this);

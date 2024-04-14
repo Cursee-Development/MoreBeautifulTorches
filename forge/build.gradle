@@ -90,10 +90,10 @@ processResources {
     from project(":common").sourceSets.main.resources
 }
 
+jar.finalizedBy('reobfJar')
+
 sourceSets.each {
     def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
 }
-
-jar.finalizedBy('reobfJar')

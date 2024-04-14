@@ -1,6 +1,7 @@
-package com.lupin.more_beautiful_torches.core;
+package com.lupin.more_beautiful_torches;
 
 import com.lupin.more_beautiful_torches.CommonConstants;
+import com.lupin.more_beautiful_torches.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,7 +15,7 @@ public class ModCreativeModeTab {
 	
 	public static RegistryObject<CreativeModeTab> MOREBEAUTIFULTORCHES_TAB = CREATIVE_MODE_TABS.register("morebeautifultorches_tab", () ->
 		CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ACACIA_LOG_TORCH_ITEM.get()))
-			.title(Component.translatable("itemGroup.morebeautifultorches")).build());
+			.title(Component.translatable("itemGroup.moreBeautifulTorches")).build());
 	
 	public static void register(IEventBus eventBus) {
 		CREATIVE_MODE_TABS.register(eventBus);
