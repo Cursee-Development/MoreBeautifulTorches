@@ -11,10 +11,11 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 @Mod(CommonConstants.MOD_ID)
 public class NeoForgeExampleMod {
@@ -31,11 +32,10 @@ public class NeoForgeExampleMod {
         
     }
     
-    @Mod.EventBusSubscriber(modid = CommonConstants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    @EventBusSubscriber(modid = CommonConstants.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
     public static class NeoEventBusListeners {
         @SubscribeEvent
-        public static void onStartTick(TickEvent.ServerTickEvent event){
-            if (event.phase == TickEvent.Phase.START) {
+        public static void onStartTick(ServerTickEvent.Pre event){
                 for (ServerPlayer player : event.getServer().getPlayerList().getPlayers()) {
                     if (player.isCrouching()) {
                         boolean leftHandCommand = BlockMethods.compareBlockToItemStack(Blocks.COMMAND_BLOCK, player.getOffhandItem());
@@ -46,10 +46,6 @@ public class NeoForgeExampleMod {
                         }
                     }
                 }
-            }
-            if (event.phase == TickEvent.Phase.END) {
-                // empty
-            }
         }
     }
     

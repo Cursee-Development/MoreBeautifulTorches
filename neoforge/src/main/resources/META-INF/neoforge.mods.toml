@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="*"
+license="All rights reserved"
+issueTrackerURL="https://github.com/Cursee-Development"
+logoFile="icon.png"
+
+[[mods]]
+modId="more_beautiful_torches"
+version="3.0.0"
+displayName="More Beautiful Torches"
+displayURL="https://github.com/Cursee-Development"
+authors="Lupin, Jason13"
+description='''Adds tons of new torches to Minecraft!'''
+credits='''Credit to Jared (Bookshelf) and Serilum (Collective).'''
+
+[[dependencies.more_beautiful_torches]]
+modId="minecraft"
+type="required"
+versionRange="[1.20.6]"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.more_beautiful_torches]]
+modId="neoforge"
+type="required"
+versionRange="[20.6.0,)"
+ordering="NONE"
+side="BOTH"
+
+# MonoLib dependency
+[[dependencies.more_beautiful_torches]]
+modId="monolib"
+type="required"
+versionRange="[1.2.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[mixins]]
+config = "more_beautiful_torches.neoforge.mixins.json"

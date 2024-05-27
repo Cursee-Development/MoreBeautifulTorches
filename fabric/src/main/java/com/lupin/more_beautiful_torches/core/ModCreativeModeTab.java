@@ -14,10 +14,10 @@ public class ModCreativeModeTab {
 	public static void register() {
 		CommonConstants.LOG.info("FabricItemGroupRegistry " + CommonConstants.MOD_ID);
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(CommonConstants.MOD_ID, "goldenfoods_tab"), GOLDENFOODS_TAB);
-		registerCreativeTabEntries();
+		// registerCreativeTabEntries();
 	}
 	private static void registerCreativeTabEntries() {
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(ModCreativeModeTab::addFoods);
+//		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(ModCreativeModeTab::addFoods);
 	}
 	public static final CreativeModeTab GOLDENFOODS_TAB = FabricItemGroup.builder()
 		.title(Component.translatable("itemGroup.moreBeautifulTorches"))

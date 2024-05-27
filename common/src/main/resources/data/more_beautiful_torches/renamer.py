@@ -26,7 +26,7 @@ def replace_phrase_in_folder(folder_path, old_phrase, new_phrase):
             print(f"Modified file: {filename} -> {new_filename}")
 
 # Define the folder path and phrases to replace
-folder_path = "recipes"
+folder_path = "OLDrecipes"
 old_phrase = "morebeautifultorches"
 new_phrase = "more_beautiful_torches"
 

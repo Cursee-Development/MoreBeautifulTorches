@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:purpur_pillar"}, "#": [{"item": "minecraft:coal"}, {"item":"minecraft:charcoal"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:purpur_pillar_torch"}, "show_notification": true }

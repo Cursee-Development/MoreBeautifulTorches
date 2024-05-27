@@ -1,0 +1,1 @@
+{ "type": "minecraft:crafting_shaped", "category": "misc", "key": {"X": {"item": "minecraft:sculk_catalyst"}, "#": [{"item": "minecraft:redstone"}]}, "pattern": ["###", "#X#", "###"], "result": {"count": 32, "item": "more_beautiful_torches:sculk_catalyst_redstone_torch"}, "show_notification": true }

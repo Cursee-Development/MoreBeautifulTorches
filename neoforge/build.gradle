@@ -1,32 +1,43 @@
 plugins {
-    id 'idea'
-    id 'net.neoforged.gradle.userdev' version '7.0.81'
     id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'net.neoforged.gradle.userdev' version '7.0.104'
+//    id 'net.neoforged.gradle.mixin' version '7.+'  // mixin
 }
+
 base {
     archivesName = "${mod_id}-neoforge-${minecraft_version}"
 }
 
-// Automatically enable neoforge AccessTransformers if the file exists
-// This location is hardcoded in FML and can not be changed.
-// https://github.com/neoforged/FancyModLoader/blob/a952595eaaddd571fbc53f43847680b00894e0c1/loader/src/main/java/net/neoforged/fml/loading/moddiscovery/ModFile.java#L118
+//mixin { // mixin
+//    config 'collective_neoforge.mixins.json' // mixin
+//} // mixin
+
 if (file('src/main/resources/META-INF/accesstransformer.cfg').exists()) {
     minecraft.accessTransformers.file file('src/main/resources/META-INF/accesstransformer.cfg')
 }
+
 runs {
     configureEach {
+        systemProperty 'forge.logging.markers', 'REGISTRIES'
+        //systemProperty 'mixin.debug.export', 'true'
+        systemProperty 'forge.logging.console.level', 'debug'
+
         modSource project.sourceSets.main
     }
+
     client {
-        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
     }
+
     server {
-        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
         programArgument '--nogui'
     }
 
     gameTestServer {
-        systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
     }
 
     data {
@@ -37,20 +48,36 @@ runs {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    implementation "net.neoforged:neoforge:${neoforge_version}"
+    implementation "net.neoforged:neoforge:${neo_version}"
     compileOnly project(":common")
 
-    implementation "curse.maven:monolib-968432:${monolib_neoforge_file}"
-
+    // MonoLib
+    implementation "curse.maven:monolib-968432:5314439"
 }
 
-// NeoGradle compiles the game, but we don't want to add our common code to the game's code
-Spec<Task> notNeoTask = { Task it -> !it.name.startsWith("neo") } as Spec<Task>
-
-tasks.withType(JavaCompile).matching(notNeoTask).configureEach {
+tasks.named('compileJava', JavaCompile).configure {
     source(project(":common").sourceSets.main.allSource)
 }
 
-tasks.withType(ProcessResources).matching(notNeoTask).configureEach {
+processResources {
     from project(":common").sourceSets.main.resources
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version   : minecraft_version, minecraft_version_range: "",
+            neo_version         : neo_version, neo_version_range: "",
+            loader_version_range: "",
+            mod_id              : mod_id, mod_name: "", mod_license: "", mod_version: "",
+            mod_authors         : "", mod_description: "", pack_format_number: "",
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
