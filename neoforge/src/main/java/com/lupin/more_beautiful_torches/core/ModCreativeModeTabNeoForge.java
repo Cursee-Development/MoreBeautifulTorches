@@ -9,11 +9,11 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class ModCreativeModeTab {
+public class ModCreativeModeTabNeoForge {
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CommonConstants.MOD_ID);
 	
 	public static DeferredHolder<CreativeModeTab, CreativeModeTab> MOREBEAUTIFULTORCHES_TAB = CREATIVE_MODE_TABS.register("morebeautifultorches_tab", () ->
-		CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.ACACIA_LOG_TORCH_ITEM.get()))
+		CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocksNeoForge.ACACIA_LOG_TORCH_ITEM.get()))
 			.title(Component.translatable("itemGroup.moreBeautifulTorches")).build());
 	
 	public static void register(IEventBus eventBus) {

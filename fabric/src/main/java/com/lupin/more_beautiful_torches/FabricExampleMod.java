@@ -1,9 +1,7 @@
 package com.lupin.more_beautiful_torches;
 
-import com.lupin.more_beautiful_torches.CommonClass;
-import com.lupin.more_beautiful_torches.CommonConstants;
-import com.lupin.more_beautiful_torches.core.ModBlocks;
-import com.lupin.more_beautiful_torches.core.ModCreativeModeTab;
+import com.lupin.more_beautiful_torches.core.ModBlocksFabric;
+import com.lupin.more_beautiful_torches.core.ModCreativeModeTabFabric;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.jason13.monolib.methods.BlockMethods;
@@ -21,8 +19,8 @@ public class FabricExampleMod implements ModInitializer {
         
         CommonClass.init();
         
-        ModBlocks.register();
-        ModCreativeModeTab.register();
+        ModBlocksFabric.register();
+        ModCreativeModeTabFabric.register();
         
         ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
         

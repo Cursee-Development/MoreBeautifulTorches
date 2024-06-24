@@ -6,14 +6,12 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-public class ModBlocks {
+public class ModBlocksFabric {
 	
 	public static Item registerItem(String name, Item item) {
 		return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(CommonConstants.MOD_ID, name), item);

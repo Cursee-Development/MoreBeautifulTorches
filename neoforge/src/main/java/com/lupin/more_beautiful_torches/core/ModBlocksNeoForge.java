@@ -8,16 +8,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.world.level.block.Blocks.*;
-
-public class ModBlocks {
+public class ModBlocksNeoForge {
 	public static final DeferredRegister<Item> MOD_ITEM_REGISTRY = DeferredRegister.create(BuiltInRegistries.ITEM, CommonConstants.MOD_ID);
 	public static final DeferredRegister<Block> MOD_BLOCK_REGISTRY = DeferredRegister.create(BuiltInRegistries.BLOCK, CommonConstants.MOD_ID);
 	
